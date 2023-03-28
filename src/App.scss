@@ -1,0 +1,70 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+}
+
+.gameboard {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 18.75rem;
+    height: 18.75rem;
+
+    border: .0625rem solid black;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 6.25rem;
+    height: 6.25rem;
+
+    border: .125rem solid black;
+    box-sizing: border-box;
+}
+
+.circle {
+    height: 5.625rem;
+    width: 5.625rem;
+
+    border-radius: 50%;
+    border: 1rem solid blue;
+    box-sizing: border-box;
+}
+
+.cross {
+    position: relative;
+
+    height: 5.625rem;
+    width: 5.625rem;
+
+    transform: rotate(45deg);
+
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        background-color: red;
+    }
+
+    &::before {
+        left: 50%;
+        width: 30%;
+        margin-left: -15%;
+        height: 100%;
+    }
+
+    &::after {
+        top: 50%;
+        height: 30%;
+        margin-top: -15%;
+        width: 100%;
+    }
+}
